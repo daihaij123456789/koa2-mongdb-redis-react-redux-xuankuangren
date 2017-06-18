@@ -14,8 +14,7 @@ var db = mongoose();
 var config = require('./src/lib/config/config');
 const index = require('./src/routes/index');
 const users = require('./src/routes/users');
-var Promise = require('bluebird');
-var request = Promise.promisify(require('request'));
+
 
 // middlewares
 app.use(convert(bodyparser));
@@ -41,9 +40,9 @@ router.use('/users', users.routes(), users.allowedMethods());
 app.use(router.routes(), router.allowedMethods());
 // response
 
+
 app.on('error', function(err, ctx) {
 	console.log(err)
 	logger.error('server error', err, ctx);
 });
-
 module.exports = app;

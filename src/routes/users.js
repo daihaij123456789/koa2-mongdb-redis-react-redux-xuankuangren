@@ -1,7 +1,7 @@
 var router = require('koa-router')();
 
 var NewsController = require('../lib/controllers/NewsController');
-var GithubLinkController = require('../lib/controllers/GithubLinkController');
+//var GithubLinkController = require('../lib/controllers/GithubLinkController');
 router.get('/', function(ctx, next) {
 	ctx.body = 'this a users response!';
 });
@@ -23,10 +23,15 @@ router.get('/newest', async function(ctx, next) {
 	var items = await newsController.findAllNewest();
 	ctx.body = items;
 })
-router.get('/githubLink', async function(ctx, next) {
+var homeAdData = require('../mock/home/ad.js')
+router.get('/api/homead', async function(ctx, next) {
+    console.log('首页 —— 广告（超值特惠）')
+    ctx.body = homeAdData
+});
+/*router.get('/githubLink', async function(ctx, next) {
 	console.log('users/githubLink');
 	var items = await GithubLinkController.findAllGithubLink();
 	
 	ctx.body = items;
-})
+})*/
 module.exports = router;
