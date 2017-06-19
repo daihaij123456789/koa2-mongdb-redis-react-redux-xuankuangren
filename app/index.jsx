@@ -11,10 +11,19 @@ import './static/css/font.css'
 const store = configureStore()
 
 import RouteMap from './router/routeMap'
-
+import PcRouterMap from './router/pc_routeMap'
+import 'antd/dist/antd.css';
+import MediaQuery from 'react-responsive';
 render(
     <Provider store={store}>
-        <RouteMap history={hashHistory}/>
+    <div>
+		<MediaQuery query='(min-device-width: 1224px)'>
+			<PcRouterMap history={hashHistory}/>
+		</MediaQuery>
+		<MediaQuery query='(max-device-width: 1224px)'>
+			<RouteMap history={hashHistory}/>
+		</MediaQuery>
+	</div>
     </Provider>,
     document.getElementById('root')
 )

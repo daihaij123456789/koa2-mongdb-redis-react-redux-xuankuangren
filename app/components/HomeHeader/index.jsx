@@ -3,7 +3,6 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { Link, hashHistory } from 'react-router'
 
 import SearchInput from '../SearchInput'
-
 import './style.less'
 
 class HomeHeader extends React.Component {
