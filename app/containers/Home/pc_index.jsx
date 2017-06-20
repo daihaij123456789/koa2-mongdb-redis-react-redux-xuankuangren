@@ -2,7 +2,7 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Category from '../../components/Category'
+import PCNewsContainer from './subpage/Pc_NewsContainer'
 import Ad from './subpage/Ad'
 import PcHomeHeader from './subpage/Pc_homeheader'
 import List from './subpage/List'
@@ -16,7 +16,7 @@ class PcHome extends React.Component {
         return (
             <div>
                 <PcHomeHeader cityName={this.props.userinfo.cityName}/>
-                <Category/>
+                <PCNewsContainer/>
                 <div style={{height: '15px'}}>{/* 分割线 */}</div>
                 <Ad/>
                 <List cityName={this.props.userinfo.cityName}/>
