@@ -2,9 +2,9 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import PcHomeHeader from '../../components/HomeHeader/pc_index'
 import Category from '../../components/Category'
 import Ad from './subpage/Ad'
+import PcHomeHeader from './subpage/Pc_homeheader'
 import List from './subpage/List'
 
 class PcHome extends React.Component {
