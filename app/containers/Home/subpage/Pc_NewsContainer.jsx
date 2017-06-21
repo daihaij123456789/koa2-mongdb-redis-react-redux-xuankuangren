@@ -1,12 +1,20 @@
 import React from 'react';
 import {Row, Col} from 'antd';
 import {Tabs, Carousel} from 'antd';
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 const TabPane = Tabs.TabPane;
 import PCNewsBlock from '../../../components/PcNewBlock/pc_news_block';
 import PCNewsImageBlock from '../../../components/PcNewsImageBlock/pc_news_image_block';
 import PCProduct from '../../../components/PcProducts/pc_products';
 import './pc_style.less'
  class PCNewsContainer extends React.Component {
+ 	constructor(props, context) {
+        super(props, context);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+        this.state={
+            key:'top'
+        }
+    }
 	render() {
 		const settings = {
 			dots: true,

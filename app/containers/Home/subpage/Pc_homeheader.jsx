@@ -71,7 +71,9 @@ class PcHomeHeader extends React.Component {
 		}
 	};
 	handleClick(e) {
-		if (e.key == "register") {
+		var key = e.key; 
+    	this.props.getHeaderKey(key)
+		if (key == "register") {
 			this.setState({current: 'register'});
 			this.setModalVisible(true);
 		} else {
@@ -92,6 +94,7 @@ class PcHomeHeader extends React.Component {
 	enterHandle(value) {
         hashHistory.push('/search/all/' + encodeURIComponent(value))
     };
+
 	render() {
 		let {getFieldProps} = this.props.form;
 		return (
